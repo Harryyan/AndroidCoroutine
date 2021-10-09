@@ -107,6 +107,8 @@ class MainActivity : AppCompatActivity() {
         // 使用上面的回调函数改造成挂起函数
         fetchUser(uid) {
             Log.d("#####", Thread.currentThread().name)
+
+            // Dispatcher may switch threads here
             cont.resumeWith(Result.success(Unit))
         }
     }
